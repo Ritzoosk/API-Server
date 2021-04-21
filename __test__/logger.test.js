@@ -15,6 +15,16 @@ describe('logger middleware', () => {
 
   afterEach(() => {
     consoleSpy.mockRestore
-  })
+  });
 
-})
+  it('logs output', () => {
+    loggerMiddleware(req, res, next);
+    expect(consoleSpy).toHaveBeenCalled();
+  });
+
+  it('on to the next middleware', () => {
+    loggerMiddleware(req, res, next);
+    expect(next).toHaveBeenCalledWith();
+  });
+
+});
