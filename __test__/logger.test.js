@@ -10,11 +10,11 @@ describe('logger middleware', () => {
   let next = jest.fn();
 
   beforeEach(() => {
-    consoleSpy = lest.spyOn(console, 'log').mockImplementation();
+    consoleSpy = jest.spyOn(console, 'log').mockImplementation();
   });
 
   afterEach(() => {
-    consoleSpy.mockRestore
+    consoleSpy.mockRestore();
   });
 
   it('logs output', () => {

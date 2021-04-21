@@ -6,10 +6,13 @@ const app = express();
 const notFound = require('./error-handlers/404.js');
 const errors = require('./error-handlers/500.js');
 const logger = require('./middleware/logger.js');
+const customRoutes = require('./routes/custom-routes.js');
+
 
 app.use(express.json());
-
 app.use(logger);
+app.use(customRoutes);
+
 
 app.get('/person/:name', (req, res) => {
   res.send(`hey!`)

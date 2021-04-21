@@ -7,10 +7,10 @@ const dotenv = require('dotenv');
 
 //internal modules next
 const server = require('./src/server.js');
+const PORT = process.env.PORT || 3000;
 
 dotenv.config();
 
 
-const PORT = process.env.PORT || 3000;
 
 server.start(PORT);
