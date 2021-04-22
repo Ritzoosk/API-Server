@@ -2,7 +2,7 @@
 
 const express = require('express');
 
-const Thing = require('../models/things.js');
+const Thing = require('../models/thing.js');
 
 const things = new Thing();
 
@@ -18,13 +18,13 @@ router.delete('/things/:id', deleteThings);
 
 function getThings(req, res) {
   let getAllThings = things.read();
-  res.json(getAllThings);
+  res.status(200).json(getAllThings);
 }
 
 function getOneThings(req, res) {
   const id = parseInt(req.params.id);
   let theThing = things.read(id);
-  res.json(theThing);
+  res.status(200).json(theThing);
 }
 
 function createThings(req, res) {
@@ -34,9 +34,14 @@ function createThings(req, res) {
 }
 
 function updateThings(req, res) {
-
+  let content = req.body;
+  let id = parseInt(req.params.id);
+  let theThing = things.update(id, content);
+  res.status(200).json(theThing);
 }
 
 function deleteThings(req, res) {
-
+  //TODO
 }
+
+module.exports = router;
