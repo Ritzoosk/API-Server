@@ -8,7 +8,7 @@ class ThingsModel {
 
   create(obj) {
     //sv new obj
-
+    console.log(obj);
     let record = {
       id: ++this.id,
       record: obj
