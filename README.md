@@ -1,4 +1,4 @@
-Project: Project Name (when applicable)
+
 
 
 Author: Student Name (or Group Name)

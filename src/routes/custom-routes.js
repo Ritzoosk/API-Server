@@ -34,7 +34,10 @@ function createThings(req, res) {
 }
 
 function updateThings(req, res) {
-  //TODO
+  let content = req.body;
+  let id = parseInt(req.params.id);
+  let theThing = things.update(id, content);
+  res.status(200).json(theThing);
 }
 
 function deleteThings(req, res) {

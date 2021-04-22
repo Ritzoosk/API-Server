@@ -30,7 +30,13 @@ class ThingsModel {
 
   update(id, obj) {
     if (id) {
-      return obj;
+      let selected = this.db.find(record => record.id === id);
+      const indexId = this.db.indexOf(selected);
+      this.db[indexId] = {
+        id: id,
+        record: obj
+      };
+      //return selected;
     }
   }
 
